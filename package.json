@@ -1,0 +1,25 @@
+{
+  "name": "scaling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:server1": "nodemon server-4001.js",
+    "start:server2": "nodemon server-4002.js",
+    "start:server3": "nodemon server-4003.js",
+    "start:server4": "nodemon server-4004.js",
+    "start:loadbalancer": "nodemon loadbalancer.js",
+    "start": "concurrently \"npm run start:server1\" \"npm run start:server2\" \"npm run start:server3\" \"npm run start:server4\" \"npm run start:loadbalancer\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "concurrently": "^8.0.1",
+    "express": "^4.18.2",
+    "http-proxy": "^1.18.1",
+    "joi": "^17.9.2",
+    "nodemon": "^2.0.22"
+  }
+}
